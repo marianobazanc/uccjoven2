@@ -2,6 +2,7 @@
     --fuentePrincipal: 'Montserrat', sans-serif;
 
     --blanco: #fff;
+    --blancoGris: #f0f0f0;
     --negro: #000;
     --verde: #b3d05c;
     --rojo: #f02b2d;
@@ -23,6 +24,8 @@ html {
 body {
     font-size: 1.6rem;
     line-height: 1.1;
+    width: 100%;
+    height: 100vh;
 }
 
 a{
@@ -31,7 +34,7 @@ a{
 
 h2{
     font-weight: 800;
-    font-size: 7rem;
+    font-size: 6.8rem;
     margin: 0;
     text-transform: uppercase;
 }
@@ -47,22 +50,11 @@ p{
 .abajo{
     padding-bottom: 3rem;
 }
-  /*Header*/
-.header{
-    padding: 1.5rem 10rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
 
-.navegacion a{
-    margin: 1.5rem;
-    color: var(--gris);
-    transition: color 0.1s;
-}
-  
-.navegacion a:hover{
-    color: var(--rojo);
+/*Iconos*/
+.icono__rrss{
+    max-width: 2rem;
+    max-height: 2rem;
 }
 
 /*Botones*/
@@ -85,157 +77,731 @@ p{
     text-transform: uppercase;
     font-size: 1rem;
 }
-/*Contenido arriba*/
-.hero{
-    padding: 8rem;
-    background-image: url(../img/joven\ emprendedor\ mejorado.jpg);
-    background-repeat: no-repeat;
-    display: grid;
+
+  /*Header*/
+.header{
     text-align: center;
 }
-.hero img{
-    height: 5rem;
-    width: 5rem;
+
+.navegacion{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: var(--amarillo);
+}
+
+.navegacion a{
+    margin: 1rem;
+    color: var(--gris);
+}
+
+.navegacion a:hover{
+    color: white;
+}
+
+@media (min-width: 768px ) {
+    .header{
+        padding: 1.5rem 10rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 1.4rem;
+    }
+    .navegacion{
+        display: flex;
+        flex-direction: row;
+        background-color: var(--blanco);
+    }
+
+    .navegacion a{
+        margin: 1.5rem;
+        color: var(--gris);
+        transition: color 0.1s;
+    }
+      
+    .navegacion a:hover{
+        color: var(--rojo);
+    }
+}
+
+
+/*Contenido arriba*/
+.premioJovenEmprendedor{
+    font-size: 3rem;
+    text-align: center;
+    margin: 2rem 3rem;
+}
+.hero{
+    text-align: center;
+    background-image: url(../img/joven\ emprendedor\ mejorado.jpg);
+    background-size: cover;
+    background-position: center;
+    color: var(--blanco);
+    padding: 3rem 1rem;
 }
 .hero h2{
-    color: var(--blanco);
+    font-size: 3.6rem;
+}
+.hero p{
+    font-size: 1.4rem;
+    margin: 4rem 0;
 }
 
-.hero img{
-    width: 20rem;
-    height: 20rem;
-    margin-left: 40rem;
-    margin-top: 8rem;
+@media (min-width: 768px) {
+    .hero{
+        padding: 8rem;
+        background-image: url(../img/joven\ emprendedor\ mejorado.jpg);
+        background-repeat: no-repeat;
+        display: grid;
+        text-align: center;
+    }
+    .hero img{
+        height: 5rem;
+        width: 5rem;
+    }
+    .hero h2{
+        font-size: 8rem;
+        color: var(--blanco);
+    }
+    
+    .hero img{
+        width: 20rem;
+        height: 20rem;
+        margin-left: 40rem;
+        margin-top: 8rem;
+    }
+    
+    .contenido-hero p{
+        font-size: 1.8rem;
+        margin: 5rem;
+        padding: 3rem 0;
+        color: var(--blanco);
+        opacity: 0.8;
+        text-align: left;
+        line-height: 1.5;
+    }
+    
+    .contenido-hero a{
+        transition: background-color 0.3s;
+    }
+    
+    .contenido-hero a:hover{
+        cursor: pointer;
+        background-color: var(--rojoOscuro);
+    }
 }
 
-.contenido-hero p{
-    padding: 3rem 0;
-    color: var(--blanco);
-    opacity: 0.8;
-    text-align: left;
-    line-height: 1.5;
-}
-
-.contenido-hero a{
-    transition: background-color 0.3s;
-}
-
-.contenido-hero a:hover{
-    cursor: pointer;
-    background-color: var(--rojoOscuro);
-}
 
 /*Cuadros*/
 .cuadros{
-    display: grid;
-    grid-template-columns: 0.3fr 0.6fr;
-    padding: 2rem 0rem;
-    margin-left: 11rem;
-}
-.otros-cuadros{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-}
-.otros-cuadros :hover{
-    cursor: pointer;
+    display: flex;
+    flex-direction: column;
 }
 .cuadro{
-    text-align: center;
-    padding: 7rem 2rem;
-    margin: 1rem;
-    box-sizing: border-box;
-    background-color: var(--amarillo);
-}
-.cuadro a{
-    transition: background-color 0.3s;
-}
-.cuadro a:hover{
-    background-color: var(--rojoOscuro);
-    cursor: pointer;
-}
-.cuadro img{
-    width: 20rem;
-    height: 20rem;
+    display: none;
 }
 .cuadro2{
     text-align: center;
-    padding: 4rem 0rem;
-    margin: 1rem;
+    margin: 2rem;
+    margin-bottom: 3rem;
     box-sizing: border-box;
     background-color: var(--blanco);
     -webkit-box-shadow: -1px 4px 7px -3px rgba(143,143,143,1);
     -moz-box-shadow: -1px 4px 7px -3px rgba(143,143,143,1);
     box-shadow: -1px 4px 7px -3px rgba(143,143,143,1);
 }
-.cuadro2 a{
-    transition: background-color 0.3s;
-}
-.cuadro2 a:hover{
-    background-color: var(--rojoOscuro);
-    cursor: pointer;
+.cuadro2 p{
+    font-size: 1.4rem;
+    margin: 1.2rem 3rem;
 }
 .cuadro2 svg{
-    padding-top: 1rem;
+    margin-bottom: -1.6rem;
 }
-.contenido-texto{
-    padding: 3rem;
+
+@media (min-width: 768px) {
+    .cuadros{
+        display: grid;
+        grid-template-columns: 0.3fr 0.6fr;
+        padding: 2rem 0rem;
+        margin-left: 11rem;
+    }
+    .otros-cuadros{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .cuadro{
+        display: block;
+        text-align: center;
+        padding: 7rem 2rem;
+        margin: 1rem;
+        box-sizing: border-box;
+        background-color: var(--amarillo);
+    }
+    .cuadro img{
+        width: 20rem;
+        height: 20rem;
+    }
+    .cuadro2{
+        text-align: center;
+        padding: 4rem 0rem;
+        margin: 0rem;
+        box-sizing: border-box;
+        background-color: var(--blanco);
+        -webkit-box-shadow: -1px 4px 7px -3px rgba(143,143,143,1);
+        -moz-box-shadow: -1px 4px 7px -3px rgba(143,143,143,1);
+        box-shadow: -1px 4px 7px -3px rgba(143,143,143,1);
+        transition: transform 0.3s;
+    }
+    .cuadro2 a{
+        transition: background-color 0.3s;
+    }
+    .cuadro2 a:hover{
+        background-color: var(--rojoOscuro);
+        cursor: pointer;
+    }
+    .cuadro2:hover{
+        transform: translateY(-3%);
+    }
+    .cuadro2 svg{
+        padding-top: 1rem;
+    }
+    .contenido-texto{
+        padding: 3rem;
+    }
+    
 }
 
 /*Premio Joven Catamarca*/
 .premio{
+    text-align: center;
     background: #355C7D;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #c06c8494, #6C5B7B, #355C7D);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #C06C84, #6C5B7B, #355C7D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    padding: 4rem;
-    clip-path: polygon(50% 0%, 100% 0, 100% 93%, 75% 97%, 25% 100%, 0 94%, 0 0);
-    text-align: center;
-    color: white;
-    margin-top: 4rem;
+    color: var(--blanco);
+    padding: 3rem;
+}
+.premio h2{
+    font-size: 2.2rem;
+}
+@media (min-width: 768px) {
+    .premio{
+        background: #355C7D;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #c06c8494, #6C5B7B, #355C7D);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #C06C84, #6C5B7B, #355C7D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        padding: 4rem;
+        clip-path: polygon(50% 0%, 100% 0, 100% 93%, 75% 97%, 25% 100%, 0 94%, 0 0);
+        text-align: center;
+        color: white;
+        margin-top: 4rem;
+    }
+    .premio h2{
+        font-size: 6rem;
+    }
+    .premio h3{
+        text-align: left;
+        font-size: 3rem;
+    }
+    .premio p{
+        text-align: left;
+        line-height: 2.2rem;
+    }
+    .premio a{
+        transition: background-color 0.3s;
+    }
+    .premio a:hover{
+        background-color: var(--rojoOscuro);
+        cursor: pointer;
+    }
 }
 
-.premio h3{
-    text-align: left;
-}
-.premio p{
-    text-align: left;
-    line-height: 2.2rem;
-}
-.premio a{
-    transition: background-color 0.3s;
-}
-.premio a:hover{
-    background-color: var(--rojoOscuro);
-    cursor: pointer;
-}
 
 /*Categorias*/
 .categorias{
     text-align: center;
-    padding:3rem;
-}
-.categorias_imagenes{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 2rem;
-    padding-bottom: 3.5rem;
-    justify-content: right;
-}
-.categorias_imagen{
-    display: grid;
-    justify-self: center;
-}
-
-.categorias a{
-    transition: background-color 0.3s;
-}
-.categorias a:hover{
-    background-color: var(--rojoOscuro);
-    cursor: pointer;
+    margin: 0 3rem;
 }
 .categorias h3{
-    font-size: 5rem;
+    font-size: 4rem;
 }
 .categorias p{
-    margin: 0 10rem 5rem 10rem;
-    line-height: 2.7rem;
+    margin-top: -3rem;
+    margin-bottom: 2rem;
+    font-size: 1.4rem;
+}
+.categorias_imagenes{
+    padding-bottom: 3rem;
+}
+.categorias_imagen{
+    max-height: 10rem;
+    max-width: 10rem;
+    margin: 1rem 2rem;
+}
+@media (min-width: 768px) {
+    .categorias{
+        text-align: center;
+        padding:3rem;
+    }
+    .categorias_imagenes{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 2rem;
+        padding-bottom: 3.5rem;
+        justify-content: right;
+    }
+
+    
+    .categorias a{
+        transition: background-color 0.3s;
+    }
+    .categorias a:hover{
+        background-color: var(--rojoOscuro);
+        cursor: pointer;
+    }
+    .categorias h3{
+        font-size: 5rem;
+    }
+    .categorias p{
+        margin: 0 10rem 5rem 10rem;
+        line-height: 2.7rem;
+    }
+    .categorias_imagen{
+        max-width: none;
+        max-height: none;
+        margin: 0;
+        display: grid;
+        justify-self: center;
+    }
+    
+}
+
+/*Premio Joven 2019*/
+.premioJoven2019{
+    text-align: center;
+    margin: 3rem 0;
+    padding-bottom: 5rem;
+    background-color: var(--verde);
+}
+.premioJoven2019 h3{
+    padding-top: 2rem;
+    font-size: 4rem;
+    margin-bottom: 0;
+}
+.premioJoven2019 p{
+    margin: 1rem 3rem 3rem;
+
+}
+@media (min-width: 768px) {
+    .premioJoven2019{
+        margin-top: 5rem;
+        background-color: var(--verde);
+        clip-path: polygon(0 6%, 100% 0, 100% 94%, 0 100%);
+        padding: 5rem 3rem;
+        text-align: center;
+        line-height: 1.7rem;
+    }
+    
+    .premioJoven2019 h3{
+        font-size: 4rem;
+    }
+    .premioJoven2019 p{
+        padding-bottom: 3rem;
+    }
+    
+    .premioJoven2019 a{
+        transition: background-color 0.3s;
+    }
+    .premioJoven2019 a:hover{
+        background-color: var(--rojoOscuro);
+        cursor: pointer;
+    }
+    
+}
+
+/*Footer*/
+.footer{
+    display: flex;
+    background-color: var(--amarillo);
+    flex-direction: column;
+}
+.navegacion__footer{
+    font-size: 1.1rem;
+    display: flex;
+
+}
+.footer p{
+    font-size: 1.1rem;
+    text-align: center;
+}
+@media (min-width: 768px) {
+    .footer{
+        margin-top: 5rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        font-size: 1.4rem;
+    }
+    .footer p{
+        text-align: right;
+    }
+    .navegacion__footer{
+        background-color: var(--amarillo);
+        display: flex;
+        align-items: center;
+    }
+}
+
+
+/*PAGINA EMPRENDER CATAMARCA*/
+/*Categorias*/
+@media (min-width: 768px) {
+    .emprender__catamarca{
+        background-image: url(../img/emprender\ pagina\ emprender.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .categorias__texto{
+        display: grid;
+        grid-template-columns: repeat(2, 0.75fr);
+        column-gap: 5rem;
+        text-align: justify;
+        margin: 3rem;
+        padding: 1rem 5rem 3rem;
+        background-color: var(--amarillo);
+        color: var(--gris);
+    }
+    .categorias__texto--h3{
+        grid-column: 1 / 3;
+        font-size: 4rem;
+        text-align: center;
+    }
+    
+    .categorias__texto h4{
+        text-align: center;
+        margin-top: 5rem;
+    }
+    .categorias__texto p{
+        line-height: 2.5rem;
+        font-size: small;
+    }
+}
+
+
+/*Pagina Bases y condiciones*/
+@media (min-width: 768px) {
+    .bases{
+        margin-left: 1rem;
+        color: var(--gris);
+    }
+    .bases h2, h3{
+        text-align: center;
+    }
+    .bases h3{
+        margin-bottom: 5rem;
+    }
+    .bases p{
+        margin-bottom: 4rem;
+        font-size: small;
+    }
+}
+
+
+/*Formulario Contacto*/
+.contactoMain h2{
+    margin-top: 2rem;
+    font-size: 3.5rem;
+    text-align: center;
+}
+.contactoMain h3{
+    text-align: center;
+    font-size: 2rem;
+}
+.ubicacion{
+    display: none;
+}
+.contenedor__contacto{
+    align-items: center;
+    margin: 0 1rem;
+}
+label {
+    display:block;
+    margin-top:20px;
+    letter-spacing:1px;
+}
+ 
+.principal {
+    display:block;
+    margin:auto;
+    width:51rem;
+    color: var(--gris);
+    font-family:Arial;
+}
+ 
+form {
+    margin:center;
+    width:4rem;
+}
+ 
+input, textarea {
+    width:34rem;
+    height:2.7rem;
+    background:var(--blancoGris);
+    border:none;
+    padding:1rem;
+    margin-top:0.5rem;
+    font-size:1rem;
+    color:black;
+}
+ 
+textarea {
+    height:15rem;
+    resize: none;
+}
+ 
+#submit {
+    width:8.5rem;
+    height:3.5rem;
+    border:none;
+    margin-top:2rem;
+    cursor:pointer;
+}
+
+/*Chrome:*/
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/*Firefox:*/
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+input[type="number"]:hover,
+input[type="number"]:focus {
+    -moz-appearance: number-input;
+}
+/*Other*/
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.rrss{
+    text-align: center;
+}
+.rrss__imagen{
+    max-height: 4rem;
+    max-width: 4rem;
+    margin: 0 2rem;
+    margin-bottom: 2rem;
+}
+.center{
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .ubicacion{
+        display: block;
+    }
+    .contenedor__contacto{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        margin: 3rem 5rem;
+    }
+    label {
+        display:block;
+        margin-top:20px;
+        letter-spacing:1px;
+    }
+     
+    .principal {
+        display:block;
+        margin:0 auto;
+        width:51rem;
+        color: var(--gris);
+        font-family:Arial;
+    }
+     
+    form {
+        margin:0 auto;
+        width:40rem;
+    }
+     
+    input, textarea {
+        width:38rem;
+        height:2.7rem;
+        background:var(--blancoGris);
+        border:none;
+        padding:1rem;
+        margin-top:0.5rem;
+        font-size:1rem;
+        color:black;
+    }
+     
+    textarea {
+        height:15rem;
+        resize: none;
+    }
+     
+    #submit {
+        width:8.5rem;
+        height:3.5rem;
+        border:none;
+        margin-top:2rem;
+        cursor:pointer;
+    }
+    
+    /*Chrome:*/
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    /*Firefox:*/
+    input[type="number"] {
+        -moz-appearance: textfield;
+    }
+    input[type="number"]:hover,
+    input[type="number"]:focus {
+        -moz-appearance: number-input;
+    }
+    /*Other*/
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    
+    .rrss{
+        text-align: center;
+    }
+    .rrss__imagen{
+        max-height: 5rem;
+        max-width: 5rem;
+        margin: 1rem 2rem;
+    }
+    .center{
+        text-align: center;
+    }
+}
+
+/*Pagina Emprender Catamarca*/
+.emprender_main{
+    padding-top: 2rem;
+    color: var(--gris);
+}
+.inicio{
+    background-color: var(--verde);
+    padding:1rem 0;
+}
+.inicio h3{
+    text-align: center;
+    margin: 7rem 0 0;
+    text-transform: uppercase;
+    color: var(--gris);
+}
+.inicio p{
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+    margin: 3rem;
+    text-align: justify;
+}
+.imagen__publicidad{
+    max-width: 30rem;
+    max-height: 30rem;
+    display: block;
+    margin: auto;
+    margin-top: 1rem;
+}
+.background{
+    background-image: url(../img/emprender\ catamarca\ fondo.png);
+    background-size: cover;
+    background-position: center;
+    padding: 4rem 0;
+}
+.p-empresas{
+    text-align: center;
+    padding-top: 5rem;
+}
+
+.evento__fecha{
+    background-color: var(--gris);
+    color: var(--blanco);
+    text-align: center;
+    margin-top: 1rem;
+    padding: 0.1rem 0;
+    font-size: 3rem;
+}
+.evento__descripcion{
+    font-size: 2rem;
+    background-color: var(--blancoGris);
+    padding: 1rem 3rem 3rem;
+    text-align: center;
+}
+.section__youtube{
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+.section__youtube h3{
+    font-size: 2rem;
+    padding-top: 2rem;
+}
+.section__youtube a{
+    transition: background-color 0.3s;
+}
+
+.section__youtube a:hover{
+    background-color: var(--rojoOscuro);
+}
+.youtube{
+    max-height: 15rem;
+    max-width: 15rem;
+    display: block;
+    margin: auto;
+    margin-bottom: 2rem;
+}
+
+
+.tresLogos{
+    display: flex;
+    justify-content: center;
+}
+
+.logo_empresa{
+    max-width: 14rem;
+    max-height: 14rem;
+    display: block;
+    margin: auto;
+}
+@media (min-width: 768px) {
+    .inicio{
+        background-color: var(--blanco);
+    }
+    .inicio h3{
+        font-size: 3.2rem;
+    }
+    .separador{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .background{
+        background-image: url(../img/emprender\ catamarca.png);
+        background-size: 55rem;
+        background-repeat: no-repeat;
+        grid-row: 1 / 2;
+    }
+    .imagen__publicidad{
+        display: none;
+    }
+    .evento{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 6rem;
+    }
+    .evento__fecha{
+        margin: 0;
+        padding: 1rem 2rem;
+    }
 }
