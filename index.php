@@ -12,8 +12,12 @@ $titulo = 'Hola - La Webera';
 $msjCorreo = "Nombre: $nombre \n E-Mail: $email \n Mensaje: \n $mensaje";
 }
 
+$mailto="marianobazanc11@gmail.com";
+$title="Titulo";
+$message="Mensaje correo";
+
 if (isset($_POST['submit'])) {
-if (mail ('marianobazanc11@gmail.com', 'Titulo', 'Mensaje correo')) {
+if (mail ($mailto, $title,$message)) {
 echo 'El mensaje se ha enviado';
 } else {
 echo 'Falló el envio';
