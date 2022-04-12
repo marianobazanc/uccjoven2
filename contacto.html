@@ -38,18 +38,39 @@
                     width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
             <section class="principal">
-                <form method="POST" action="index.php">
-                    <label for="nombre">Nombre:</label>
-                    <input id="nombre" name="nombre" placeholder="Nombre">
-                    <label for="email">Email:</label>
-                    <input id="email" name="email" type="email" placeholder="ejemplo@email.com">
-                    <label for="numero">Numero:</label>
-                    <input id="numero" type="number" name="numero" placeholder="Numero de contacto">
-                    <label for="emprendimiento">Emprendimiento:</label>
-                    <input id="emprendimiento" name="emprendimiento" placeholder="Nombre de tu Emprendimiento: ">
-                    <label for="mensaje">Mensaje:</label>
-                    <textarea id="mensaje" name="mensaje" placeholder="Danos tu mensaje"></textarea>
+                <form id="formulario">
+                    <div class="">
+                        <label for="nombre">Nombre:</label>
+                        <input autocomplete="off" id="nombre" name="nombre" placeholder="Nombre" >
+                        <p class="error disabled" id="nombreError">Solo letras y espacio</p>
+                    </div>
+
+                    <div class="">
+                        <label for="email">Email:</label>
+                        <input autocomplete="off" id="email" name="email" type="text" placeholder="ejemplo@email.com">
+                        <p class="error disabled" id="emailError">Ingrese un mail valido</p>
+                    </div>
+
+                    <div class="">
+                        <label for="numero">Numero:</label>
+                        <input autocomplete="off" id="numero" type="number" name="numero" placeholder="Numero de contacto">
+                        <p class="error disabled" id="numeroError">Porfavor ingrese solo numeros</p>
+                    </div>
+
+                    <div class="">
+                        <label for="emprendimiento">Emprendimiento:</label>
+                        <input autocomplete="off" id="emprendimiento" name="emprendimiento" placeholder="Nombre de tu Emprendimiento: ">
+                        <p class="error disabled" id="emprendimientoError">Solo letras y espacios</p>
+                    </div>
+
+                    <div class="">
+                        <label for="mensaje">Mensaje:</label>
+                        <textarea id="mensaje" name="mensaje" placeholder="Danos tu mensaje"></textarea>
+                        <p class="error disabled" id="mensajeError"> Este campo es obligatorio</p>
+                    </div>
+
                     <input id="submit" name="submit" type="submit" value="Enviar">
+                    
                 </form>
             </section>
         </div>
@@ -81,6 +102,10 @@
         </nav>
         <p>Todos los derechos reservados. Unión Comercial Catamarca Joven - 2021 &copy;</p>
     </footer>
+    <script src="./js/formulario.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="./js/alerts.js"></script>
 </body>
 
 </html>

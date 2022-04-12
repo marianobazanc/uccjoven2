@@ -41,6 +41,17 @@ h2{
 p{
     font-weight: 400;
 }
+.error{
+    color: red;
+    font-size: small;
+    margin-top: .5rem;
+}
+.enabled {
+    display: block;
+}
+.disabled{
+    display: none;
+}
 .separacion{
     padding: 0rem 10rem;
 }
